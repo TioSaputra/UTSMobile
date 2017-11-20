@@ -13,31 +13,23 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
+    Intent i;
+    String nama;
     String[] nama_karoke = {
-            "Karoke 1",
-            "Karoke 2",
-            "Karoke 3",
-            "Karoke 4",
-            "Karoke 5",
-            "Karoke 6",
-            "Karoke 7",
-            "Karoke 8",
-            "Karoke 9",
-            "Karoke 10"
+            "Persegi",
+            "Lingkaran",
+            "Segitiga",
+            "Persegi Panjang",
+            "Jajargenjang"
     };
 
 
     int[] image ={
-            R.drawable.unnamed,
-            R.drawable.unnamed,
-            R.drawable.unnamed,
-            R.drawable.unnamed,
-            R.drawable.unnamed,
-            R.drawable.unnamed,
-            R.drawable.unnamed,
-            R.drawable.unnamed,
-            R.drawable.unnamed,
-            R.drawable.unnamed
+            R.drawable.persegi,
+            R.drawable.lingkaran,
+            R.drawable.segitiga,
+            R.drawable.persegi,
+            R.drawable.trape
     };
 
     @Override
@@ -50,60 +42,43 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         listview.setAdapter(customadapter);
         listview.setOnItemClickListener(this);
     }
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
-//                i = new Intent(this, DetailActivity.class);
-//                startActivity(i);
+                i = new Intent(this, DetailAcivity.class);
+                nama = "Persegi";
+                i.putExtra("nama", nama);
+                startActivity(i);
                 break;
-
             case 1:
-//                i = new Intent(this, DetailActivity.class);
-//                startActivity(i);
+                i = new Intent(this, DetailAcivity.class);
+                nama = "Lingkaran";
+                i.putExtra("nama", nama);
+                startActivity(i);
                 break;
 
             case 2:
-//                i = new Intent(this, DetailActivity.class);
-//                startActivity(i);
+                i = new Intent(this, DetailAcivity.class);
+                nama = "Segitiga";
+                i.putExtra("nama", nama);
+                startActivity(i);
                 break;
 
             case 3:
-//                i = new Intent(this, DetailActivity.class);
-//                startActivity(i);
+                i = new Intent(this, DetailAcivity.class);
+                nama = "Persegi Panjang";
+                i.putExtra("nama", nama);
+                startActivity(i);
                 break;
-
             case 4:
-//                i = new Intent(this,DetailActivity.class);
-//                startActivity(i);
-                break;
-
-            case 5:
-//                i = new Intent(this,DetailActivity.class);
-//                startActivity(i);
-                break;
-
-            case 6:
-//                i = new Intent(this,DetailActivity.class);
-//                startActivity(i);
-                break;
-
-            case 7:
-//                i = new Intent(this,DetailActivity.class);
-//                startActivity(i);
-                break;
-
-            case 8:
-//                i = new Intent(this,DetailActivity.class);
-//                startActivity(i);
-                break;
-
-            case 9:
-//                i = new Intent(this,DetailActivity.class);
-//                startActivity(i);
+                i = new Intent(this, DetailAcivity.class);
+                nama = "Trapesium";
+                i.putExtra("nama", nama);
+                startActivity(i);
                 break;
         }
-
     }
 
     class Customadapter extends BaseAdapter {
