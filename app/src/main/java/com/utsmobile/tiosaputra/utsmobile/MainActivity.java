@@ -45,40 +45,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        switch (position){
-            case 0:
-                i = new Intent(this, DetailAcivity.class);
-                nama = "Persegi";
-                i.putExtra("nama", nama);
-                startActivity(i);
-                break;
-            case 1:
-                i = new Intent(this, DetailAcivity.class);
-                nama = "Lingkaran";
-                i.putExtra("nama", nama);
-                startActivity(i);
-                break;
-
-            case 2:
-                i = new Intent(this, DetailAcivity.class);
-                nama = "Segitiga";
-                i.putExtra("nama", nama);
-                startActivity(i);
-                break;
-
-            case 3:
-                i = new Intent(this, DetailAcivity.class);
-                nama = "Persegi Panjang";
-                i.putExtra("nama", nama);
-                startActivity(i);
-                break;
-            case 4:
-                i = new Intent(this, DetailAcivity.class);
-                nama = "Trapesium";
-                i.putExtra("nama", nama);
-                startActivity(i);
-                break;
-        }
+        i = new Intent(this, DetailAcivity.class);
+        i.putExtra("nama", nama_karoke[position]);
+        startActivity(i);
     }
 
     class Customadapter extends BaseAdapter {

@@ -25,17 +25,18 @@ public class DetailAcivity extends AppCompatActivity {
         Intent i = getIntent();
         jenis = i.getStringExtra("nama");
 
+//        Setting title
         nama = (TextView)findViewById(R.id.nama);
+        nama.setText(jenis);
+
+//        Getting value from form
         alas = (EditText) findViewById(R.id.alas);
         tinggi = (EditText) findViewById(R.id.tinggi);
-        nilaialas = alas.getText().toString();
-        nilaitinggi = tinggi.getText().toString();
-
-        nAlas = Integer.parseInt(nilaialas);
-        nTinggi = Integer.parseInt(nilaitinggi);
     }
 
     public void luas(View view) {
+        nAlas = Integer.parseInt(alas.getText().toString());
+        nTinggi = Integer.parseInt(tinggi.getText().toString());
         luas = nAlas * nTinggi;
         Intent i = new Intent(DetailAcivity.this,HasilActivity.class);
         i.putExtra("judul", jenis);
